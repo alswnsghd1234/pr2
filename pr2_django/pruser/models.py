@@ -7,6 +7,9 @@ class Pruser(models.Model):
     password = models.CharField(max_length=64, verbose_name='비밀번호')
     register_date = models.DateTimeField(auto_now_add=True, verbose_name='등록날짜')
     
+    def __str__(self):
+        return self.email # 누군지 나타내주는 코드
+    
     class Meta:
         db_table = 'project_pruser'
         verbose_name = '사용자'
